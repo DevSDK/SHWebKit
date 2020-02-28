@@ -19,6 +19,11 @@ DerivedSources/
 *.vcproj.*.user
 *.suo
 *.ncb
+*.gir
+*.gmo
+*.typelib
+*.pot
+*.stamp
 /.vs/
 /.vscode/
 Documentation/
