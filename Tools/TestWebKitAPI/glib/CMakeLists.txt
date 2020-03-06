@@ -7,8 +7,8 @@ set(WebKitGLibAPITests_SOURCES
 )
 
 set(WebKitGLibAPITests_INCLUDE_DIRECTORIES
-    ${CMAKE_SOURCE_DIR}/Source
-    ${CMAKE_SOURCE_DIR}/Source/WTF
+    ${PROJECT_SOURCE_DIR}/Source
+    ${PROJECT_SOURCE_DIR}/Source/WTF
     ${FORWARDING_HEADERS_DIR}
     ${TOOLS_DIR}/TestWebKitAPI/Tests/WebKitGLib
     ${TOOLS_DIR}/TestWebKitAPI/glib/WebKitGLib
@@ -88,7 +88,7 @@ file(MAKE_DIRECTORY ${TEST_RESOURCES_DIR})
 add_definitions(
     -DWEBKIT_TEST_PLUGIN_DIR="${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/plugins"
     -DWEBKIT_EXEC_PATH="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}"
-    -DWEBKIT_SRC_DIR="${CMAKE_SOURCE_DIR}"
+    -DWEBKIT_SRC_DIR="${PROJECT_SOURCE_DIR}"
     -DWEBKIT_TEST_WEB_EXTENSIONS_DIR="${TEST_LIBRARY_DIR}"
     -DWEBKIT_INJECTED_BUNDLE_PATH="${CMAKE_LIBRARY_OUTPUT_DIRECTORY}"
     -DWEBKIT_TEST_RESOURCES_DIR="${TEST_RESOURCES_DIR}"
@@ -110,7 +110,7 @@ add_custom_command(
             ${TOOLS_DIR}/TestWebKitAPI/Tests/WebKitGLib/resources/link-title.js
     COMMAND glib-compile-resources
             --target=${TEST_RESOURCES_DIR}/webkitglib-tests-resources.gresource
-            --sourcedir=${CMAKE_SOURCE_DIR}
+            --sourcedir=${PROJECT_SOURCE_DIR}
             ${TOOLS_DIR}/TestWebKitAPI/Tests/WebKitGLib/resources/webkitglib-tests.gresource.xml
 )
 
@@ -164,7 +164,7 @@ macro(ADD_WPE_QT_TEST test_name)
     target_link_libraries(${test_name} ${WPEQtAPITest_LIBRARIES})
     target_include_directories(${test_name} SYSTEM PRIVATE ${WPEQtAPITests_INCLUDE_DIRECTORIES})
     target_include_directories(${test_name} PRIVATE
-      ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_SOURCE_DIR}/Source/WebKit/UIProcess/API/wpe/qt)
+      ${CMAKE_CURRENT_BINARY_DIR} ${PROJECT_SOURCE_DIR}/Source/WebKit/UIProcess/API/wpe/qt)
 endmacro()
 
 if (PORT STREQUAL "WPE" AND ENABLE_WPE_QT_API)

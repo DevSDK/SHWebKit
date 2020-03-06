@@ -3,7 +3,7 @@ set_property(DIRECTORY . PROPERTY FOLDER "WebDriver")
 include(WebKitCommon)
 
 set(WebDriver_PRIVATE_INCLUDE_DIRECTORIES
-    "${CMAKE_BINARY_DIR}"
+    "${PROJECT_BINARY_DIR}"
     "${WEBDRIVER_DIR}"
     "${DERIVED_SOURCES_WEBDRIVER_DIR}"
 )

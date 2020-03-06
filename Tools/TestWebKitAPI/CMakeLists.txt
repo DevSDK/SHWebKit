@@ -102,7 +102,7 @@ set(TestWTF_SOURCES
 )
 
 set(TestWTF_PRIVATE_INCLUDE_DIRECTORIES
-    ${CMAKE_BINARY_DIR}
+    ${PROJECT_BINARY_DIR}
     ${TESTWEBKITAPI_DIR}
     ${THIRDPARTY_DIR}/gtest/include
 )
@@ -153,7 +153,7 @@ if (ENABLE_WEBCORE)
     )
 
     set(TestWebCore_PRIVATE_INCLUDE_DIRECTORIES
-        ${CMAKE_BINARY_DIR}
+        ${PROJECT_BINARY_DIR}
         ${TESTWEBKITAPI_DIR}
         ${THIRDPARTY_DIR}/gtest/include
         ${PAL_FRAMEWORK_HEADERS_DIR}
@@ -178,7 +178,7 @@ if (ENABLE_WEBKIT_LEGACY)
     )
 
     set(TestWebKitLegacy_PRIVATE_INCLUDE_DIRECTORIES
-        ${CMAKE_BINARY_DIR}
+        ${PROJECT_BINARY_DIR}
         ${TESTWEBKITAPI_DIR}
         ${THIRDPARTY_DIR}/gtest/include
         ${PAL_FRAMEWORK_HEADERS_DIR}
@@ -248,7 +248,7 @@ if (ENABLE_WEBKIT)
     )
 
     set(TestWebKit_PRIVATE_INCLUDE_DIRECTORIES
-        ${CMAKE_BINARY_DIR}
+        ${PROJECT_BINARY_DIR}
         ${TESTWEBKITAPI_DIR}
         ${THIRDPARTY_DIR}/gtest/include
         ${PAL_FRAMEWORK_HEADERS_DIR}
